@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessa Fácil Ribeirão</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <img id="logo-marca" src="logo-marca.png" alt="Logo Marca">
+        <div class="menu">
+            <button id="menu-btn">☰</button>
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar...">
+                <button><img src="lupa-branca.svg" alt="Ícone de Pesquisa"></button>
+            </div>
+        </div>
+        
+    </nav>
+</header>
+
+<main>
+    
+    <!-- 
+     <section class="main-banner">
+        <h1>O melhor da sua cidade à um clique de distância !</h1>
+        <img src="app-image.jpg" alt="Imagem Acessa Fácil">
+    </section>
+    
+    -->
+    
+    <section class="main-banner">
+    <h1>O melhor da sua cidade à um clique de distância!</h1>
+    
+  <video id="bannerVideo" class="banner-video" autoplay muted >
+    <source src="video-predio-fiusa.mp4" type="video/mp4">
+    Seu navegador não suporta a tag de vídeo.
+</video>
+
+</section>
+
+    <section class="features">
+        
+        <a href="nicho.html">
+        <div class="feature-item">
+            <img src="anuncio-icon.svg" alt="Guia de Anúncios">
+            <h2>Guia de Anúncios</h2>
+            <p>Descubra anúncios e serviços na sua região.</p>
+        </div>
+        </a>
+        
+        <a href="turistico.html">
+        <div class="feature-item">
+            <img src="grid-icon-turismo.svg" alt="Guia de Anúncios">
+            <h2>Pontos Turísticos</h2>
+            <p>Descubra os melhores pontos turísticos de Ribeirão Preto.</p>
+        </div>
+        </a>
+        
+        <a href="servicos-publico.html">
+        <div class="feature-item">
+            <img src="icon-service.png" alt="Serviço Público">
+            <h2>Serviço Público</h2>
+            <p>Informações sobre serviços públicos.</p>
+        </div>
+        </a>
+        
+        <a href="portal-emprego.html">
+        <div class="feature-item">
+            <img src="lista-emprego-icon.png" alt="Portal do Emprego">
+            <h2>Portal do Emprego</h2>
+            <p>Oportunidades de emprego em Ribeirão Preto.</p>
+        </div>
+        </a>
+     
+        <a href="https://www.google.com/maps" target="_blank">  
+        <div class="feature-item">
+            <img src="icon-mapa.png" alt="Mapa da Cidade">
+            <h2>Mapa da Cidade</h2>
+            <p>Localize os melhores lugares.</p>
+        </div>
+       </a> 
+        
+    </section>
+
+    <section class="news-section">
+        <div class="news-item">
+            <h2>Notícia 1</h2>
+            <p>Últimas atualizações sobre serviços locais.</p>
+        </div>
+        <div class="news-item">
+            <h2>Notícia 2</h2>
+            <p>Oportunidades de emprego em destaque.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+  <!--    <a href="#">Início</a>
+    <a href="#">Serviços</a>
+    <a href="#">Mapa</a>
+    <a href="turistico.html">Lugares turísticos</a>
+    -->
+    <p>© 2024 Acessa fácil Ribeirão - Todos os direitos reservados.</p>
+    
+</footer>
+
+<script>
+    const video = document.getElementById('bannerVideo');
+
+    // Define a velocidade do vídeo
+    video.playbackRate = 0.3; // Velocidade mais lenta
+
+    // Quando o vídeo termina naturalmente
+    video.addEventListener('ended', () => {
+        video.pause(); // Pausa o vídeo ao final
+    });
+</script>
+
+</body>
+</html>

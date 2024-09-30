@@ -1,0 +1,222 @@
+/* Importa uma fonte do Google */
+
+
+a {
+    color: inherit; /* Mantém a cor do texto original */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definições de estilo globais */
+body {
+    font-family:"-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif";
+    background-color: #000049;
+    color: white;
+    line-height: 1.6;
+    padding-bottom: 50px; /* Evitar sobreposição com o rodapé em mobile */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #002D62;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-marca {
+    transform: translateX(-98px);
+    width: 400px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+#menu-btn {
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 5px;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #ffffff10;
+    color: white;
+    font-size: 16px;
+}
+
+.search-container button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-container button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Banner principal */
+.main-banner {
+bac;
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #000049;
+}
+
+.main-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.main-banner img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o vídeo */
+.banner-video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+
+/* Seção de funcionalidades */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #002D62;
+}
+
+.feature-item {
+    background-color: #003580;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #ffffffb3;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Seção de notícias */
+.news-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #FF4500;
+}
+
+.news-item {
+    background-color: white;
+    color: #000049;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-banner h1 {
+        font-size: 2rem;
+    }
+
+    .main-banner img {
+        width: 100%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .news-section {
+        grid-template-columns: 1fr;
+    }
+
+    #menu-btn {
+        font-size: 38px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-banner h1 {
+        font-size: 2.2rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Anúncios - Acessa Fácil Ribeirão</title>
+    <link rel="stylesheet" href="anuncios.css">
+    <style>
+        /* Estilos para a navegação de nichos */
+        .nicho-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .nicho-item {
+            background-color: #003580;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center;
+            width: 150px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .nicho-item:hover {
+            transform: scale(1.1);
+            background-color: #005bb5;
+        }
+
+        .ad-list {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .ad-item {
+            background-color: #ff4500;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        .ad-item img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <img id="logo-marca" src="logo-marca.png" alt="Logo Marca">
+        
+        <div class="menu">
+            <button id="menu-btn">☰</button>
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar anúncios...">
+                <button><img src="lupa-branca.svg" alt="Ícone de Pesquisa"></button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="main-banner">
+        <h1>Guia de Anúncios</h1>
+        <p>Encontre serviços, produtos e oportunidades em Ribeirão Preto!</p>
+    </section>
+
+    <!-- Navegação por nichos -->
+    <section class="nicho-list">
+        <div class="nicho-item" onclick="showAnuncios('automotivo')">Mecânica Automotiva</div>
+        <div class="nicho-item" onclick="showAnuncios('eletronico')">Eletrônicos</div>
+        <div class="nicho-item" onclick="showAnuncios('alimentacao')">Alimentação</div>
+        <div class="nicho-item" onclick="showAnuncios('beleza')">Beleza e Estética</div>
+        <!-- Adicione mais nichos aqui -->
+    </section>
+
+    <!-- Lista de anúncios para cada nicho -->
+    <section id="anuncios-automotivo" class="ad-list">
+        <div class="ad-item">
+            <img src="ad1.jpg" alt="Anúncio 1">
+            <h2>Anúncio 1 - Mecânica Automotiva</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="ad-item">
+            <img src="ad2.jpg" alt="Anúncio 2">
+            <h2>Anúncio 2 - Mecânica Automotiva</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </section>
+
+    <section id="anuncios-eletronico" class="ad-list">
+        <div class="ad-item">
+            <img src="ad3.jpg" alt="Anúncio 3">
+            <h2>Anúncio 1 - Eletrônicos</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="ad-item">
+            <img src="ad4.jpg" alt="Anúncio 4">
+            <h2>Anúncio 2 - Eletrônicos</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </section>
+
+    <section id="anuncios-alimentacao" class="ad-list">
+        <div class="ad-item">
+            <img src="ad5.jpg" alt="Anúncio 5">
+            <h2>Anúncio 1 - Alimentação</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="ad-item">
+            <img src="ad6.jpg" alt="Anúncio 6">
+            <h2>Anúncio 2 - Alimentação</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </section>
+
+    <section id="anuncios-beleza" class="ad-list">
+        <div class="ad-item">
+            <img src="ad7.jpg" alt="Anúncio 7">
+            <h2>Anúncio 1 - Beleza e Estética</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="ad-item">
+            <img src="ad8.jpg" alt="Anúncio 8">
+            <h2>Anúncio 2 - Beleza e Estética</h2>
+            <p>Descrição do serviço ou produto oferecido no anúncio.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </section>
+    
+    <!-- Botão Voltar -->
+        <a href="index3.html" class="voltar-btn">Página inicial</a>
+    
+</main>
+
+<footer>
+   <!--    <a href="#">Início</a>
+    <a href="#">Serviços</a>
+    <a href="#">Mapa</a>
+    <a href="turistico.html">Lugares turísticos</a>
+    -->
+    <p>© 2024 Acessa fácil Ribeirão - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    function showAnuncios(nicho) {
+        const sections = document.querySelectorAll('.ad-list');
+        sections.forEach(section => section.classList.remove('active'));
+
+        document.getElementById('anuncios-' + nicho).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
