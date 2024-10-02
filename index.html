@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acessa Fácil Ribeirão</title>
     <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
 
 <header>
     <nav>
         <img id="logo-marca" src="logo-marca.png" alt="Logo Marca">
-        <div class="menu">
-            <button id="menu-btn">☰</button>
-            <div class="search-container">
-                <input type="text" placeholder="Pesquisar...">
-                <button><img src="lupa-branca.svg" alt="Ícone de Pesquisa"></button>
-            </div>
-        </div>
         
+        <div class="menu">
+    <button id="menu-btn">☰</button>
+    <div id="menu-list" class="menu-list">
+        <ul>
+            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastre-se</a></li>
+            <li><a href="faleconosco.html"><i class="fas fa-envelope"></i> Fale conosco</a></li>
+            <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre nós</a></li>
+        </ul>
+    </div>
+</div>
+
     </nav>
 </header>
+
 
 <main>
     
@@ -33,7 +41,7 @@
     -->
     
     <section class="main-banner">
-    <h1>O melhor guia da sua cidade à um clique de distância!</h1>
+    <h1>O melhor da sua cidade à um clique de distância!</h1>
     
   <video id="bannerVideo" class="banner-video" autoplay muted >
     <source src="video-predio-fiusa.mp4" type="video/mp4">
@@ -48,7 +56,7 @@
         <div class="feature-item">
             <img src="anuncio-icon.svg" alt="Guia de Anúncios">
             <h2>Guia de Anúncios</h2>
-            <p>Descubra anúncios e serviços na sua região.</p>
+            <p>Descubra anúncios, comércios e serviços na sua região.</p>
         </div>
         </a>
         
@@ -105,24 +113,42 @@
     <a href="turistico.html">Lugares turísticos</a>
     -->
     <p>© 2024 Acessa fácil Ribeirão - Todos os direitos reservados.</p>
-
-    <a href="https://wa.me/551692153271?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20do%20Acessa%20Fácil%20Ribeirão!" target="_blank">
+    
+    <div class="social-icons">
+   
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram">
+        </a>
+        
+       <a href="https://wa.me/551692153271?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20do%20Acessa%20Fácil%20Ribeirão!" target="_blank">
     <img src="whatsapp-icon.png" alt="WhatsApp" style="width:30px; height:30px;">
     Fale conosco pelo WhatsApp e tire suas dúvidas!
-    </a>
+</a>
+
+
+    </div>
     
 </footer>
 
 <script>
-    const video = document.getElementById('bannerVideo');
 
-    // Define a velocidade do vídeo
-    video.playbackRate = 0.5; // Velocidade mais lenta
+const video = document.getElementById('bannerVideo');
 
-    // Quando o vídeo termina naturalmente
-    video.addEventListener('ended', () => {
-        video.pause(); // Pausa o vídeo ao final
-    });
+// Define a velocidade do vídeo
+video.playbackRate = 0.3; // Velocidade mais lenta
+
+// Quando o vídeo termina naturalmente
+video.addEventListener('ended', () => {
+    video.pause(); // Pausa o vídeo ao final
+});
+
+const menuBtn = document.getElementById('menu-btn');
+const menuList = document.getElementById('menu-list');
+
+menuBtn.addEventListener('click', () => {
+    menuList.classList.toggle('show');
+});
+
 </script>
 
 </body>

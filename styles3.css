@@ -1,11 +1,11 @@
 /* Importa uma fonte do Google */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
+/* Estilo para links */
 a {
     color: inherit; /* Mantém a cor do texto original */
     text-decoration: none; /* Remove o sublinhado */
 }
-
 
 /* Reset básico */
 * {
@@ -16,7 +16,7 @@ a {
 
 /* Definições de estilo globais */
 body {
-    font-family:"-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif";
+    font-family: 'Roboto', sans-serif; /* Fonte do Google */
     background-color: #000049;
     color: white;
     line-height: 1.6;
@@ -26,11 +26,12 @@ body {
 /* Cabeçalho */
 header {
     background-color: #002D62;
-    padding: 15px;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Adicionando overflow hidden */
 }
 
 nav {
@@ -51,12 +52,13 @@ nav {
 }
 
 #menu-btn {
-    font-size: 32px;
+    font-size: 28px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     margin-right: 10px;
+    display: none; /* Esconde o botão de menu por padrão */
 }
 
 .search-container {
@@ -94,7 +96,6 @@ nav {
 
 /* Banner principal */
 .main-banner {
-bac;
     text-align: center;
     padding: 30px 15px;
     background-color: #000049;
@@ -121,7 +122,6 @@ bac;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
-
 
 /* Seção de funcionalidades */
 .features {
@@ -178,7 +178,7 @@ bac;
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-    
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -194,7 +194,6 @@ bac;
     width: 30px;
     height: 30px;
 }
-
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
@@ -220,20 +219,105 @@ bac;
     }
 
     #menu-btn {
+        display: block; /* Mostra o botão de menu em dispositivos pequenos */
         font-size: 38px;
+    }
+
+    .menu-list {
+        display: none; /* Esconde a lista de menu em dispositivos pequenos */
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .main-banner h1 {
-        font-size: 2.2rem;
+@media (min-width: 769px) {
+    #menu-list {
+        display: flex; /* Mostra a lista de menu em dispositivos maiores */
+        position: static; /* Fixa a lista de menu no cabeçalho */
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
     }
 
-    .features {
-        grid-template-columns: repeat(2, 1fr);
+
+    .menu-list ul {
+        display: flex;
     }
 
-    .news-section {
-        grid-template-columns: repeat(2, 1fr);
+    .menu-list ul li {
+        margin: 0 10px;
     }
+
+    #menu-btn {
+        display: none; /* Esconde o botão de menu em dispositivos maiores */
+    }
+}
+
+.menu-list {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #002D62;
+    border-radius: 5px;
+    padding: 18px 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-list.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list ul li {
+    margin: 10px 20px;
+}
+
+.menu-list ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu-list ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: yellow;
+}
+
+.menu-list ul li a:hover {
+    color: #FF4500;
+}
+
+.menu-btn {
+    font-size: 34px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+#menu-btn:hover {
+    transform: none;
+}
+
+.hidden {
+    display: none;
 }
