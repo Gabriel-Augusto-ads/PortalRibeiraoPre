@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal do Emprego - Ribeirão Preto</title>
     <link rel="stylesheet" href="turismo-styles.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
 </head>
 <body>
 
-<header>
+<header>   
     <nav>
-        <img id="logo-marca" src="logo-marca.png" alt="Logo Marca">
-          
-        
-        <div class="menu">
+        <img id="logo-marca" src="logo-marca.png" alt="Logo Marca"> 
+         <div class="menu">
             <button id="menu-btn">☰</button>
-            <div class="search-container">
-                <input type="text" placeholder="Pesquisar vagas de emprego ...">
-                <button><img src="lupa-branca.svg" alt="Ícone de Pesquisa"></button>
-            </div>
+            <div id="menu-list" class="menu-list">
+        <ul>
+            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastre-se</a></li>
+            <li><a href="faleconosco.html"><i class="fas fa-envelope"></i> Fale conosco</a></li>
+            <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre nós</a></li>
+        </ul>
+    </div>
+            <!-- <div class="search-container">
+                <input type="text" placeholder="Pesquisar serviços públicos ...">
+                <button><img src="lupa-branca.svg" alt="Ícone de Pesquisa"></button> 
+                -->
         </div>
-    </nav>
+    </nav>       
 </header>
 
 <main>
@@ -60,13 +67,35 @@
     </section>
     
     <!-- Botão Voltar -->
-    <a href="index.html" class="voltar-btn">Página inicial</a>
+    <a href="index3.html" class="voltar-btn">Página inicial</a>
 
 </main>
 
 <footer>
+    
+    <div class="social-icons">
+   
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram">
+        </a>
+        
+       <a href="https://wa.me/551692153271?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20do%20Acessa%20Fácil%20Ribeirão!" target="_blank">
+    <img src="whatsapp-icon.png" alt="WhatsApp" style="width:30px; height:30px;"></a>
+
+    </div>    
+    
     <p>© 2024 Acessa fácil Ribeirão - Todos os direitos reservados.</p>
 </footer>
+
+<script>
+       
+    const menuBtn = document.getElementById('menu-btn');
+const menuList = document.getElementById('menu-list');
+
+menuBtn.addEventListener('click', () => {
+    menuList.classList.toggle('show');
+});
+</script>
 
 </body>
 </html>
