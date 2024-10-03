@@ -1,5 +1,5 @@
 /* Importa uma fonte do Google */
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* Reset básico */
 * {
@@ -10,7 +10,7 @@
 
 /* Definições de estilo globais */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #000049;
     color: white;
     line-height: 1.6;
@@ -25,6 +25,7 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 nav {
@@ -53,6 +54,7 @@ nav {
     margin-right: 10px;
 }
 
+/* Container de busca */
 .search-container {
     display: flex;
     align-items: center;
@@ -98,6 +100,18 @@ nav {
     max-width: 400px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.main-banner p {
+    font-size: 1.2rem;
+    color: #ffffffb3;
+    margin-bottom: 20px;
 }
 
 /* Seção de funcionalidades */
@@ -156,64 +170,6 @@ nav {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .main-banner h1 {
-        font-size: 2rem;
-    }
-
-    .main-banner img {
-        width: 100%;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .news-section {
-        grid-template-columns: 1fr;
-    }
-
-    #menu-btn {
-        font-size: 38px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .main-banner h1 {
-        font-size: 2.2rem;
-    }
-
-    .features {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .news-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-
-/* Banner do Guia de Anúncios */
-.main-banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.main-banner p {
-    font-size: 1.2rem;
-    color: #ffffffb3;
-    margin-bottom: 20px;
-}
-
-
 /* Lista de Anúncios */
 .ad-list {
     display: grid;
@@ -269,19 +225,146 @@ nav {
     background-color: #e03e00;
 }
 
+/* Botão voltar */
 .voltar-btn {
-    background-color: #4CAF50; /* Cor de fundo verde */
-    color: white; /* Cor do texto branco */
-    padding: 5px 10px; /* Diminuir o espaçamento interno */
-    border: none; /* Sem borda */
-    border-radius: 3px; /* Bordas um pouco arredondadas */
-    cursor: pointer; /* Mão ao passar o mouse */
-    margin: 10px 0; /* Diminuir a margem superior e inferior */
-    text-decoration: none; /* Sem sublinhado */
-    font-size: 14px; /* Diminuir o tamanho da fonte */
-    display: inline-block; /* Permite o uso de margens */
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
 }
 
 .voltar-btn:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    background-color: #45a049;
+}
+
+/* Ícones sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Menu expansível */
+.menu-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #002D62;
+    border-radius: 5px;
+    padding: 0px 0px 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-list.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list ul li {
+    margin: 10px 20px;
+}
+
+.menu-list ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu-list ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: yellow;
+}
+
+.menu-list ul li a:hover {
+    color: #FF4500;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-banner h1 {
+        font-size: 2rem;
+    }
+
+    .features,
+    .news-section {
+        grid-template-columns: 1fr;
+    }
+
+    #menu-btn {
+        display: block;
+        font-size: 38px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-banner h1 {
+        font-size: 2.2rem;
+    }
+
+    .features,
+    .news-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 769px) {
+    #menu-list {
+        display: flex;
+        position: static;
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .menu-list ul {
+        display: flex;
+    }
+
+    .menu-list ul li {
+        margin: 0 10px;
+    }
+
+    #menu-btn {
+        display: none;
+    }
 }
