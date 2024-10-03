@@ -1,5 +1,5 @@
 /* Importa uma fonte do Google */
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 /* Reset básico */
 * {
     margin: 0;
@@ -9,7 +9,7 @@
 
 /* Definições de estilo globais */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #000049;
     color: white;
     line-height: 1.6;
@@ -188,6 +188,23 @@ nav {
     background-color: #45a049; /* Cor do botão ao passar o mouse */
 }
 
+
+.social-icons {
+    display: flex; /* Usa flexbox para os ícones sociais */
+    justify-content: center; /* Centraliza os ícones */
+    margin-top: 10px; /* Espaçamento acima dos ícones sociais */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Espaçamento entre os ícones sociais */
+    text-decoration: none; /* Remove o sublinhado dos links dos ícones */
+}
+
+.social-icons img {
+    width: 30px; /* Largura dos ícones sociais */
+    height: 30px; /* Altura dos ícones sociais */
+}
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
     nav {
@@ -228,4 +245,100 @@ nav {
     .news-section {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+
+@media (min-width: 769px) {
+    #menu-list {
+        display: flex; /* Mostra a lista de menu em dispositivos maiores */
+        position: static; /* Fixa a lista de menu no cabeçalho */
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+
+    .menu-list ul {
+        display: flex;
+    }
+
+    .menu-list ul li {
+        margin: 0 10px;
+    }
+
+    #menu-btn {
+        display: none; /* Esconde o botão de menu em dispositivos maiores */
+    }
+}
+
+/* Menu expansível */
+.menu-list {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #002D62;
+    border-radius: 5px;
+    padding: 0px 0px 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-list.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list ul li {
+    margin: 10px 20px;
+}
+
+.menu-list ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu-list ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: yellow;
+}
+
+.menu-list ul li a:hover {
+    color: #FF4500;
+}
+
+.menu-btn {
+    font-size: 34px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+#menu-btn:hover {
+    transform: none;
+}
+
+.hidden {
+    display: none;
 }
